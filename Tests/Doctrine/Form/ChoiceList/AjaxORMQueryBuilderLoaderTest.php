@@ -11,7 +11,9 @@
 
 namespace Sonatra\Bundle\FormExtensionsBundle\Tests\Doctrine\Form\ChoiceList;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
+use Doctrine\ORM\Tools\SchemaTool;
 use Sonatra\Bundle\FormExtensionsBundle\Doctrine\Form\ChoiceList\AjaxORMQueryBuilderLoader;
 use Symfony\Bridge\Doctrine\Test\DoctrineTestHelper;
 use Doctrine\DBAL\Connection;
@@ -135,29 +137,8 @@ class AjaxORMQueryBuilderLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testGetPaginatedEntities()
     {
-        $em = DoctrineTestHelper::createTestEntityManager();
-
-        $query = $this->getMockBuilder('QueryMock')
-            ->setMethods(array('setParameter', 'getResult', 'getSql', '_doExecute'))
-            ->getMock();
-
-        /* @var QueryBuilder|\PHPUnit_Framework_MockObject_MockObject $qb */
-        $qb = $this->getMockBuilder('Doctrine\ORM\QueryBuilder')
-            ->setConstructorArgs(array($em))
-            ->setMethods(array('setFirstResult', 'setMaxResults', 'getQuery'))
-            ->getMock();
-
-        $qb->expects($this->once())
-            ->method('setFirstResult')
-            ->willReturn($qb);
-
-        $qb->expects($this->once())
-            ->method('setMaxResults')
-            ->willReturn($qb);
-
-        $qb->expects($this->once())
-            ->method('getQuery')
-            ->willReturn($query);
+        $em = $this->initEntityManager();
+        $qb = new QueryBuilder($em);
 
         $qb->select('e')
             ->from('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity', 'e');
@@ -168,30 +149,39 @@ class AjaxORMQueryBuilderLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testGetSize()
     {
-        $em = DoctrineTestHelper::createTestEntityManager();
-
-        $query = $this->getMockBuilder('QueryMock')
-            ->setMethods(array('getSingleScalarResult', 'setParameter', 'getResult', 'getSql', '_doExecute'))
-            ->getMock();
-
-        $query->expects($this->once())
-            ->method('getSingleScalarResult')
-            ->willReturn(0);
-
-        /* @var QueryBuilder|\PHPUnit_Framework_MockObject_MockObject $qb */
-        $qb = $this->getMockBuilder('Doctrine\ORM\QueryBuilder')
-            ->setConstructorArgs(array($em))
-            ->setMethods(array('getQuery'))
-            ->getMock();
-
-        $qb->expects($this->once())
-            ->method('getQuery')
-            ->willReturn($query);
+        $em = $this->initEntityManager();
+        $qb = new QueryBuilder($em);
 
         $qb->select('e')
             ->from('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity', 'e');
 
         $loader = new AjaxORMQueryBuilderLoader($qb);
         $loader->getSize();
+    }
+
+    /**
+     * Init the doctrine entity manager.
+     *
+     * @return EntityManagerInterface
+     */
+    protected function initEntityManager()
+    {
+        $em = DoctrineTestHelper::createTestEntityManager();
+        $schemaTool = new SchemaTool($em);
+        $classes = array(
+            $em->getClassMetadata('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity'),
+        );
+
+        try {
+            $schemaTool->dropSchema($classes);
+        } catch (\Exception $e) {
+        }
+
+        try {
+            $schemaTool->createSchema($classes);
+        } catch (\Exception $e) {
+        }
+
+        return $em;
     }
 }

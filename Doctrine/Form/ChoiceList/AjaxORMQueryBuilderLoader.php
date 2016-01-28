@@ -12,6 +12,7 @@
 namespace Sonatra\Bundle\FormExtensionsBundle\Doctrine\Form\ChoiceList;
 
 use Doctrine\DBAL\Connection;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 use Doctrine\ORM\QueryBuilder;
 
@@ -70,11 +71,8 @@ class AjaxORMQueryBuilderLoader implements AjaxEntityLoaderInterface
     public function getSize()
     {
         if (null === $this->size) {
-            $qb = clone $this->queryBuilder;
-            $alias = current($qb->getRootAliases());
-            $qb->setParameters($this->queryBuilder->getParameters());
-            $qb->select("count($alias)");
-            $this->size = (integer) $qb->getQuery()->getSingleScalarResult();
+            $paginator = new Paginator($this->queryBuilder);
+            $this->size = $paginator->count();
         }
 
         return $this->size;
@@ -87,12 +85,11 @@ class AjaxORMQueryBuilderLoader implements AjaxEntityLoaderInterface
     {
         $pageSize = $pageSize < 1 ? 1 : $pageSize;
         $pageNumber = $pageNumber < 1 ? 1 : $pageNumber;
-        $qb = clone $this->queryBuilder;
-
-        $qb->setFirstResult(($pageNumber - 1) * $pageSize)
+        $paginator = new Paginator($this->queryBuilder);
+        $paginator->getQuery()->setFirstResult(($pageNumber - 1) * $pageSize)
             ->setMaxResults($pageSize);
 
-        return $qb->getQuery()->getResult();
+        return $paginator->getIterator()->getArrayCopy();
     }
 
     /**
