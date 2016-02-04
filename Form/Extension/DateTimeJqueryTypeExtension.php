@@ -138,7 +138,7 @@ class DateTimeJqueryTypeExtension extends AbstractTypeExtension
 
             // override parent type value (merge options for datetime, date, time)
             'format' => $format,
-            'empty_value' => null,
+            'placeholder' => null,
             'with_minutes' => true,
             'with_seconds' => false,
         ));
