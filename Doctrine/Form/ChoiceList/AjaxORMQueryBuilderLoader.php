@@ -61,7 +61,7 @@ class AjaxORMQueryBuilderLoader implements AjaxEntityLoaderInterface
     {
         $qb = $this->queryBuilder;
         $alias = current($qb->getRootAliases());
-        $qb->andWhere($qb->expr()->like("{$alias}.{$identifier}", ":{$identifier}"));
+        $qb->andWhere("LOWER({$alias}.{$identifier}) LIKE LOWER(:{$identifier})");
         $qb->setParameter($identifier, "%{$search}%");
     }
 
