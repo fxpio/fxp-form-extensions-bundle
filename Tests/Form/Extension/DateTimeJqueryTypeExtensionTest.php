@@ -55,7 +55,7 @@ class DateTimeJqueryTypeExtensionTest extends TypeTestCase
     {
         $form = $this->factory->create(DateTimeType::class, null, array('locale' => 'fr_FR'));
 
-        $this->assertEquals('dd/MM/yyyy HH:mm', $form->getConfig()->getOption('format'));
+        $this->assertEquals('dd/MM/y HH:mm', $form->getConfig()->getOption('format'));
     }
 
     public function testDefaultAttributes()
@@ -85,10 +85,10 @@ class DateTimeJqueryTypeExtensionTest extends TypeTestCase
     {
         if (defined('INTL_ICU_VERSION')
                 && version_compare(INTL_ICU_VERSION, '51.2', '>=')) {
-            return 'M/d/yyyy, h:mm a';
+            return 'M/d/yy, h:mm a';
         }
 
-        return 'M/d/yyyy h:mm a';
+        return 'M/d/yy h:mm a';
     }
 
     /**

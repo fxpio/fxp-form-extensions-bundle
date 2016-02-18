@@ -52,14 +52,14 @@ class DateJqueryTypeExtensionTest extends TypeTestCase
         $this->assertTrue($config->getOption('date_picker'));
         $this->assertFalse($config->getOption('time_picker'));
         $this->assertEquals('en', $config->getOption('locale'));
-        $this->assertEquals('M/d/yyyy', $config->getOption('format'));
+        $this->assertEquals('M/d/yy', $config->getOption('format'));
     }
 
     public function testFormatFr()
     {
         $form = $this->factory->create(DateType::class, null, array('locale' => 'fr_FR'));
 
-        $this->assertEquals('dd/MM/yyyy', $form->getConfig()->getOption('format'));
+        $this->assertEquals('dd/MM/y', $form->getConfig()->getOption('format'));
     }
 
     public function testDefaultAttributes()

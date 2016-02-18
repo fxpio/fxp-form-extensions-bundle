@@ -11,6 +11,7 @@
 
 namespace Sonatra\Bundle\FormExtensionsBundle\Form\Extension;
 
+use Sonatra\Bundle\FormExtensionsBundle\Form\Util\DateTimeUtil;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormView;
@@ -65,16 +66,11 @@ class DateTimeJqueryTypeExtension extends AbstractTypeExtension
             $attr['data-'.$name] = $value;
         }
 
-        $attr = array_merge($attr, array(
+        $view->vars['attr'] = array_merge($attr, array(
             'data-datetime-picker' => 'true',
             'data-button-id' => $view->vars['id'].'_datetime_btn',
+            'data-format' => DateTimeUtil::convertToJsFormat($attr['data-format']),
         ));
-
-        $attr['data-format'] = str_replace('d', 'D', $attr['data-format']);
-        $attr['data-format'] = str_replace('y', 'Y', $attr['data-format']);
-        $attr['data-format'] = str_replace('a', 'A', $attr['data-format']);
-
-        $view->vars['attr'] = $attr;
     }
 
     /**
@@ -83,38 +79,9 @@ class DateTimeJqueryTypeExtension extends AbstractTypeExtension
     public function configureOptions(OptionsResolver $resolver)
     {
         $format = function (Options $options) {
-            $date_format = \IntlDateFormatter::NONE;
-            $time_format = \IntlDateFormatter::NONE;
-
-            if ($options['date_picker']) {
-                $date_format = \IntlDateFormatter::SHORT;
-            }
-
-            if ($options['time_picker']) {
-                $time_format = $options['with_seconds'] ? \IntlDateFormatter::MEDIUM : \IntlDateFormatter::SHORT;
-            }
-
-            $formater = new \IntlDateFormatter(
-                    $options['locale'],
-                    $date_format,
-                    $time_format,
-                    $options['user_timezone'],
-                    \IntlDateFormatter::GREGORIAN,
-                    null
-            );
-
-            $formater->setLenient(false);
-            $pattern = $formater->getPattern();
-
-            if (false === strpos($pattern, 'yyyy')) {
-                if (false !== strpos($pattern, 'yy')) {
-                    $pattern = str_replace('yy', 'yyyy', $pattern);
-                } elseif (false !== strpos($pattern, 'y')) {
-                    $pattern = str_replace('y', 'yyyy', $pattern);
-                }
-            }
-
-            return $pattern;
+            return DateTimeUtil::getPattern($options['locale'], $options['user_timezone'],
+                                            $options['date_picker'], $options['time_picker'],
+                                            $options['with_seconds']);
         };
 
         $resolver->setDefaults(array(
