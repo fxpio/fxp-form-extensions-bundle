@@ -30,7 +30,7 @@ class TimeJqueryTypeExtension extends DateTimeJqueryTypeExtension
 
         $builder->resetViewTransformers();
         $builder->addViewTransformer(new DateTimeToLocalizedStringTransformer(
-            'UTC',
+            $options['user_timezone'],
             $options['user_timezone'],
             \IntlDateFormatter::NONE,
             $time_format,
