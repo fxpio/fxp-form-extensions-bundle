@@ -55,7 +55,7 @@ class DateTimeJqueryTypeExtensionTest extends TypeTestCase
     {
         $form = $this->factory->create(DateTimeType::class, null, array('locale' => 'fr_FR'));
 
-        $this->assertEquals('dd/MM/y HH:mm', $form->getConfig()->getOption('format'));
+        $this->assertTrue(in_array($form->getConfig()->getOption('format'), array('dd/MM/y HH:mm', 'dd/MM/yy HH:mm')));
     }
 
     public function testDefaultAttributes()

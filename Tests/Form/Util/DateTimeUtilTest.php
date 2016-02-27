@@ -22,7 +22,7 @@ class DateTimeUtilTest extends \PHPUnit_Framework_TestCase
 {
     public function testGetJsFormat()
     {
-        $this->assertSame('M/D/YYYY, h:mm A', DateTimeUtil::getJsFormat('en_US'));
+        $this->assertTrue(in_array(DateTimeUtil::getJsFormat('en_US'), array('M/D/YYYY h:mm A', 'M/D/YYYY, h:mm A')));
     }
 
     public function testGetJsFormatFr()
