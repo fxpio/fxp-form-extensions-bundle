@@ -28,6 +28,7 @@ class AjaxORMQueryBuilderLoaderTest extends \PHPUnit_Framework_TestCase
         return array(
             array('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleStringIdEntity', Connection::PARAM_STR_ARRAY),
             array('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity', Connection::PARAM_INT_ARRAY),
+            array('Sonatra\Bundle\FormExtensionsBundle\Tests\Doctrine\Form\Fixtures\SingleGuidIdEntity', Connection::PARAM_STR_ARRAY),
         );
     }
 
