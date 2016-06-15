@@ -22,12 +22,12 @@
     },
     "require-dev" : {
         "symfony/doctrine-bridge" : "~2.8|~3.0",
-        "doctrine/orm" : "~2.5",
-        "bower-asset/select2": "4.0.*",
-        "bower-asset/sonatra-jquery-datetime-picker": "1.0.*@dev"
+        "doctrine/orm" : "~2.5"
     },
     "suggest": {
-        "fxp/composer-asset-plugin": "For manage NPM/Bower dependencies with Composer"
+        "fxp/composer-asset-plugin": "For manage NPM/Bower dependencies with Composer",
+        "bower-asset/select2": "The Select2 jquery plugin",
+        "bower-asset/sonatra-jquery-datetime-picker": "The datetime picker jquery plugin"
     },
     "autoload": {
         "psr-4": { "Sonatra\\Bundle\\FormExtensionsBundle\\": "" }
