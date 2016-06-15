@@ -32,15 +32,15 @@ class GetAjaxChoiceListEventTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         /* @var Request $request */
-        $request = $this->getMock('Symfony\Component\HttpFoundation\Request');
+        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
         $requestStack = new RequestStack();
         $requestStack->push($request);
 
         /* @var AjaxChoiceLoaderInterface $choiceLoader */
-        $choiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface');
+        $choiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
 
         /* @var AjaxChoiceListFormatterInterface|\PHPUnit_Framework_MockObject_MockObject $formatter */
-        $formatter = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface');
+        $formatter = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
         $formatter->expects($this->any())
             ->method('formatResponseData')
             ->will($this->returnValue('AJAX_FORMATTER_MOCK'));

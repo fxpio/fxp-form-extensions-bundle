@@ -23,14 +23,14 @@ class NewTagConverterListenerTest extends \PHPUnit_Framework_TestCase
     public function testOnSubmit()
     {
         /* @var NewTagConverterInterface|\PHPUnit_Framework_MockObject_MockObject $converter */
-        $converter = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Doctrine\Form\Converter\NewTagConverterInterface');
+        $converter = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Doctrine\Form\Converter\NewTagConverterInterface')->getMock();
         $converter->expects($this->any())
             ->method('convert')
             ->will($this->returnCallback(function ($value) {
                 return 'CONVERTED_'.$value;
             }));
 
-        $form = $this->getMock('Symfony\Component\Form\FormInterface');
+        $form = $this->getMockBuilder('Symfony\Component\Form\FormInterface')->getMock();
         $event = new FormEvent($form, 'FOO_BAR');
         $listener = new NewTagConverterListener($converter);
 

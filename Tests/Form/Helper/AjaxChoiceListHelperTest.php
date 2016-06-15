@@ -31,60 +31,59 @@ class AjaxChoiceListHelperTest extends \PHPUnit_Framework_TestCase
         return 'Sonatra\Bundle\FormExtensionsBundle\Form\Helper\AjaxChoiceListHelper';
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedExceptionMessage The 'invalid' format is not allowed. Try with 'xml', 'json'
+     */
     public function testInvalidFormat()
     {
-        $msg = 'The \'invalid\' format is not allowed. Try with \'xml\', \'json\'';
-        $this->setExpectedException('Symfony\Component\Form\Exception\InvalidArgumentException', $msg);
-
         /* @var Request $request */
         $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
 
         /* @var AjaxChoiceLoaderInterface $choiceLoader */
-        $choiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface');
+        $choiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
 
         $helper = $this->getHelperClass();
         /* @var AjaxChoiceListHelper $helper */
         $helper::generateResponse($request, $choiceLoader, 'invalid');
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedExceptionMessage You must create a child class of AjaxChoiceLostHelper and override the "createChoiceListFormatter" method
+     */
     public function testInvalidFormatter()
     {
-        if ('Sonatra\Bundle\FormExtensionsBundle\Form\Helper\AjaxChoiceListHelper' !== $this->getHelperClass()) {
-            return;
-        }
-
-        $msg = 'You must create a child class of AjaxChoiceLostHelper and override the "createChoiceListFormatter" method';
-        $this->setExpectedException('Symfony\Component\Form\Exception\InvalidArgumentException', $msg);
-
         /* @var Request $request */
         $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
 
         /* @var AjaxChoiceLoaderInterface $choiceLoader */
-        $choiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface');
+        $choiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
 
         $helper = $this->getHelperClass();
         /* @var AjaxChoiceListHelper $helper */
         $helper::generateResponse($request, $choiceLoader);
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedExceptionMessage Expected argument of type "Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface", "NULL" given
+     */
     public function testInvalidFormAjaxFormatter()
     {
-        $msg = 'Expected argument of type "Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface", "NULL" given';
-        $this->setExpectedException('Symfony\Component\Form\Exception\UnexpectedTypeException', $msg);
-
         /* @var Request $request */
         $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $formBuilder = $this->getMock('Symfony\Component\Form\FormBuilderInterface');
+        $formBuilder = $this->getMockBuilder('Symfony\Component\Form\FormBuilderInterface')->getMock();
 
         /* @var FormInterface|\PHPUnit_Framework_MockObject_MockObject $form */
-        $form = $this->getMock('Symfony\Component\Form\FormInterface');
+        $form = $this->getMockBuilder('Symfony\Component\Form\FormInterface')->getMock();
         $form->expects($this->any())
             ->method('getConfig')
             ->will($this->returnValue($formBuilder));
@@ -94,19 +93,20 @@ class AjaxChoiceListHelperTest extends \PHPUnit_Framework_TestCase
         $helper::generateResponse($request, $form);
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedExceptionMessage Expected argument of type "Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface", "NULL" given
+     */
     public function testInvalidChoiceLoader()
     {
-        $msg = 'Expected argument of type "Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface", "NULL" given';
-        $this->setExpectedException('Symfony\Component\Form\Exception\UnexpectedTypeException', $msg);
-
         /* @var Request $request */
         $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $formatter = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface');
+        $formatter = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
 
-        $formBuilder = $this->getMock('Symfony\Component\Form\FormBuilderInterface');
+        $formBuilder = $this->getMockBuilder('Symfony\Component\Form\FormBuilderInterface')->getMock();
         $formBuilder->expects($this->any())
             ->method('getAttribute')
             ->will($this->returnCallback(function ($value) use ($formatter) {
@@ -118,7 +118,7 @@ class AjaxChoiceListHelperTest extends \PHPUnit_Framework_TestCase
             }));
 
         /* @var FormInterface|\PHPUnit_Framework_MockObject_MockObject $form */
-        $form = $this->getMock('Symfony\Component\Form\FormInterface');
+        $form = $this->getMockBuilder('Symfony\Component\Form\FormInterface')->getMock();
         $form->expects($this->any())
             ->method('getConfig')
             ->will($this->returnValue($formBuilder));
@@ -158,14 +158,14 @@ class AjaxChoiceListHelperTest extends \PHPUnit_Framework_TestCase
                     : null;
             }));
 
-        $formatter = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface');
+        $formatter = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
         $formatter->expects($this->any())
             ->method('formatResponseData')
             ->will($this->returnValue('MOCK_FORMATTED_DATA'));
 
-        $choiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface');
+        $choiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
 
-        $formBuilder = $this->getMock('Symfony\Component\Form\FormBuilderInterface');
+        $formBuilder = $this->getMockBuilder('Symfony\Component\Form\FormBuilderInterface')->getMock();
         $formBuilder->expects($this->any())
             ->method('getAttribute')
             ->will($this->returnCallback(function ($value) use ($formatter, $choiceLoader) {
@@ -181,7 +181,7 @@ class AjaxChoiceListHelperTest extends \PHPUnit_Framework_TestCase
             }));
 
         /* @var FormInterface|\PHPUnit_Framework_MockObject_MockObject $form */
-        $form = $this->getMock('Symfony\Component\Form\FormInterface');
+        $form = $this->getMockBuilder('Symfony\Component\Form\FormInterface')->getMock();
         $form->expects($this->any())
             ->method('getConfig')
             ->will($this->returnValue($formBuilder));
@@ -212,7 +212,7 @@ class AjaxChoiceListHelperTest extends \PHPUnit_Framework_TestCase
                     : null;
             }));
 
-        $choiceList = $this->getMock('Symfony\Component\Form\ChoiceList\ChoiceListInterface');
+        $choiceList = $this->getMockBuilder('Symfony\Component\Form\ChoiceList\ChoiceListInterface')->getMock();
         $choiceList->expects($this->any())
             ->method('getChoices')
             ->will($this->returnValue(array()));
@@ -224,7 +224,7 @@ class AjaxChoiceListHelperTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue(array()));
 
         /* @var AjaxChoiceLoaderInterface|\PHPUnit_Framework_MockObject_MockObject $choiceLoader */
-        $choiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface');
+        $choiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
         $choiceLoader->expects($this->any())
             ->method('loadPaginatedChoiceList')
             ->will($this->returnValue($choiceList));

@@ -34,7 +34,7 @@ class Select2ChoiceToValueTransformerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->choiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\DynamicChoiceLoaderInterface');
+        $this->choiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\DynamicChoiceLoaderInterface')->getMock();
         $this->choiceLoader
             ->expects($this->any())
             ->method('loadValuesForChoices')
@@ -71,19 +71,21 @@ class Select2ChoiceToValueTransformerTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->transformer->reverseTransform(null));
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedExceptionMessage Expected a scalar
+     */
     public function testReverseTransformWithNoScalarValue()
     {
-        $msg = 'Expected a scalar';
-        $this->setExpectedException('Symfony\Component\Form\Exception\TransformationFailedException', $msg);
-
         $this->transformer->reverseTransform(array());
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedExceptionMessage The choice "TEST" does not exist or is not unique
+     */
     public function testReverseTransformWithNotUniqueChoice()
     {
-        $msg = 'The choice "TEST" does not exist or is not unique';
-        $this->setExpectedException('Symfony\Component\Form\Exception\TransformationFailedException', $msg);
-
         $this->choiceLoader
             ->expects($this->any())
             ->method('loadChoicesForValues')

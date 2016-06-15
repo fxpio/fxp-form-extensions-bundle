@@ -45,7 +45,7 @@ abstract class AbstractAjaxChoiceListFormatterTest extends \PHPUnit_Framework_Te
         parent::setUp();
 
         $this->choiceListFactory = new PropertyAccessDecorator(new DefaultChoiceListFactory());
-        $this->choiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface');
+        $this->choiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
         $this->formatter = $this->getFormatter();
 
         $this->choiceLoader->expects($this->any())

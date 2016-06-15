@@ -43,4 +43,9 @@ class Select2ChoiceListHelperTest extends AjaxChoiceListHelperTest
 
         $this->executeGenerateResponseWithCreateFormatter($ajaxIds, $validContent);
     }
+
+    public function testInvalidFormatter()
+    {
+        // skip test
+    }
 }

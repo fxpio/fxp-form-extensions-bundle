@@ -48,7 +48,7 @@ class DynamicDoctrineChoiceLoaderTest extends AbstractChoiceLoaderTest
             new MockEntity('baz', 'Baz'),
         );
 
-        $this->objectLoader = $this->getMock('Symfony\Bridge\Doctrine\Form\ChoiceList\EntityLoaderInterface');
+        $this->objectLoader = $this->getMockBuilder('Symfony\Bridge\Doctrine\Form\ChoiceList\EntityLoaderInterface')->getMock();
         $this->idReader = $this->getMockBuilder('Symfony\Bridge\Doctrine\Form\ChoiceList\IdReader')
             ->disableOriginalConstructor()
             ->getMock();
@@ -238,11 +238,12 @@ class DynamicDoctrineChoiceLoaderTest extends AbstractChoiceLoaderTest
      * @dataProvider getIsGroup
      *
      * @param bool $group
+     *
+     * @expectedException \Symfony\Component\Form\Exception\RuntimeException
+     * @expectedExceptionMessage MOCK_EXCEPTION
      */
     public function testNotAddNewTags($group)
     {
-        $this->setExpectedException('Symfony\Component\Form\Exception\RuntimeException', 'MOCK_EXCEPTION');
-
         $loader = $this->createChoiceLoader($group);
         $choices = array(
             $this->objects[0],

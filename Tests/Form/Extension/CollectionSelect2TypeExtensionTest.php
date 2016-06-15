@@ -297,11 +297,12 @@ class CollectionSelect2TypeExtensionTest extends AbstractSelect2TypeExtensionTes
         $this->assertEquals('/foobar', $selectorView->vars['select2']['ajax']['url']);
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The "Symfony\Component\Form\Extension\Core\Type\TextType" type is not an "choice" with Select2 extension, because: the options "multiple", "select2" do not exist.
+     */
     public function testWithoutChoice()
     {
-        $msg = 'The "Symfony\Component\Form\Extension\Core\Type\TextType" type is not an "choice" with Select2 extension, because: the options "multiple", "select2" do not exist.';
-        $this->setExpectedException('Symfony\Component\Form\Exception\InvalidConfigurationException', $msg);
-
         $options = $this->mergeOptions(array());
         $options['entry_type'] = TextType::class;
 

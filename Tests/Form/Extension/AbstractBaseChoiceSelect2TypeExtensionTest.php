@@ -43,12 +43,12 @@ abstract class AbstractBaseChoiceSelect2TypeExtensionTest extends TypeTestCase
     {
         parent::setUp();
 
-        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
-        $this->router = $this->getMock('Symfony\Component\Routing\RouterInterface');
+        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->router = $this->getMockBuilder('Symfony\Component\Routing\RouterInterface')->getMock();
         $router = $this->router;
         $this->requestStack = new RequestStack();
         /* @var Request $request */
-        $request = $this->getMock('Symfony\Component\HttpFoundation\Request');
+        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
         $this->requestStack->push($request);
 
         /* @var EventDispatcherInterface $dispatcher */

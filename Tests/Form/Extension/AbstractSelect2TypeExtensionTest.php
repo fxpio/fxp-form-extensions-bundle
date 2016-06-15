@@ -49,11 +49,11 @@ abstract class AbstractSelect2TypeExtensionTest extends TypeTestCase
 
         \Locale::setDefault('en');
 
-        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
-        $this->router = $this->getMock('Symfony\Component\Routing\RouterInterface');
+        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->router = $this->getMockBuilder('Symfony\Component\Routing\RouterInterface')->getMock();
         $this->requestStack = new RequestStack();
         /* @var Request $request */
-        $request = $this->getMock('Symfony\Component\HttpFoundation\Request');
+        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
         $this->requestStack->push($request);
 
         $this->router->expects($this->any())
@@ -68,7 +68,7 @@ abstract class AbstractSelect2TypeExtensionTest extends TypeTestCase
             ->addTypeExtension(new ChoiceSelect2TypeExtension($this->dispatcher, $this->requestStack, $this->router, $this->getExtensionTypeName(), 10))
             ->getFormFactory();
 
-        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
         $this->builder = new FormBuilder(null, null, $this->dispatcher, $this->factory);
     }
 
@@ -352,7 +352,7 @@ abstract class AbstractSelect2TypeExtensionTest extends TypeTestCase
 
     public function testChoiceLoaderOption()
     {
-        $choiceLoader = $this->getMock($this->getDynamicLoaderInterface());
+        $choiceLoader = $this->getMockBuilder($this->getDynamicLoaderInterface())->getMock();
         $choiceLoader->expects($this->any())
             ->method('loadValuesForChoices')
             ->will($this->returnValue(array()));
@@ -367,11 +367,12 @@ abstract class AbstractSelect2TypeExtensionTest extends TypeTestCase
         $this->assertSame($choiceLoader, $form->getConfig()->getOption('choice_loader'));
     }
 
+    /**
+     * @expectedException \Symfony\Component\Form\Exception\InvalidConfigurationException
+     * @expectedExceptionMessage The "choice_loader" option must be an instance of DynamicChoiceLoaderInterface or the "choices" option must be an array
+     */
     public function testInvalidChoiceLoaderOption()
     {
-        $msg = 'The "choice_loader" option must be an instance of DynamicChoiceLoaderInterface or the "choices" option must be an array';
-        $this->setExpectedException('Symfony\Component\Form\Exception\InvalidConfigurationException', $msg);
-
         $options = array('select2' => array('enabled' => true), 'choices' => null);
 
         $this->factory->create($this->getExtensionTypeName(), null, $options);

@@ -41,17 +41,17 @@ class AjaxFormControllerTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->controller = new AjaxFormController();
-        $this->request = $this->getMock('Symfony\Component\HttpFoundation\Request');
+        $this->request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
         $this->helper = $this->getMockClass('Sonatra\Bundle\FormExtensionsBundle\Form\Helper\AjaxChoiceListHelper', array('generateResponse'));
 
-        $ajaxFormatter = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface');
+        $ajaxFormatter = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
         $ajaxFormatter->expects($this->any())
             ->method('formatResponseData')
             ->will($this->returnValue('AJAX_FORMATTER_MOCK'));
 
-        $ajaxChoiceLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface');
+        $ajaxChoiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
 
-        $formBuilder = $this->getMock('Symfony\Component\Form\FormBuilderInterface');
+        $formBuilder = $this->getMockBuilder('Symfony\Component\Form\FormBuilderInterface')->getMock();
         $formBuilder->expects($this->any())
             ->method('getAttribute')
             ->will($this->returnCallback(function ($value) use ($ajaxFormatter, $ajaxChoiceLoader) {
@@ -66,12 +66,12 @@ class AjaxFormControllerTest extends \PHPUnit_Framework_TestCase
                 return $value;
             }));
 
-        $formFactory = $this->getMock('Symfony\Component\Form\FormFactoryInterface');
+        $formFactory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
         $formFactory->expects($this->any())
             ->method('createBuilder')
             ->will($this->returnValue($formBuilder));
 
-        $container = $this->getMock('Symfony\Component\DependencyInjection\ContainerInterface');
+        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
         $container->expects($this->any())
             ->method('get')
             ->will($this->returnValue($formFactory));

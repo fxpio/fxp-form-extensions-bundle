@@ -48,7 +48,7 @@ class AjaxDoctrineChoiceLoaderTest extends AbstractAjaxChoiceLoaderTest
             new MockEntity('baz', 'Baz'),
         );
 
-        $this->objectLoader = $this->getMock('Sonatra\Bundle\FormExtensionsBundle\Doctrine\Form\ChoiceList\AjaxEntityLoaderInterface');
+        $this->objectLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Doctrine\Form\ChoiceList\AjaxEntityLoaderInterface')->getMock();
         $this->idReader = $this->getMockBuilder('Symfony\Bridge\Doctrine\Form\ChoiceList\IdReader')
             ->disableOriginalConstructor()
             ->getMock();

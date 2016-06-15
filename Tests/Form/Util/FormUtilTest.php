@@ -24,14 +24,14 @@ class FormUtilTest extends \PHPUnit_Framework_TestCase
 {
     public function testIsFormType()
     {
-        $parentType = $this->getMock('Symfony\Component\Form\ResolvedFormTypeInterface');
+        $parentType = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeInterface')->getMock();
         $parentType->expects($this->any())
             ->method('getInnerType')
             ->will($this->returnValue(new TextType()));
 
-        $formInnerType = $this->getMock('Symfony\Component\Form\FormTypeInterface');
+        $formInnerType = $this->getMockBuilder('Symfony\Component\Form\FormTypeInterface')->getMock();
 
-        $formType = $this->getMock('Symfony\Component\Form\ResolvedFormTypeInterface');
+        $formType = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeInterface')->getMock();
         $formType->expects($this->any())
             ->method('getInnerType')
             ->will($this->returnValue($formInnerType));
@@ -39,12 +39,12 @@ class FormUtilTest extends \PHPUnit_Framework_TestCase
             ->method('getParent')
             ->will($this->returnValue($parentType));
 
-        $formConfig = $this->getMock('Symfony\Component\Form\FormBuilderInterface');
+        $formConfig = $this->getMockBuilder('Symfony\Component\Form\FormBuilderInterface')->getMock();
         $formConfig->expects($this->any())
             ->method('getType')
             ->will($this->returnValue($formType));
 
-        $form = $this->getMock('Symfony\Component\Form\FormInterface');
+        $form = $this->getMockBuilder('Symfony\Component\Form\FormInterface')->getMock();
         $form->expects($this->any())
             ->method('getConfig')
             ->will($this->returnValue($formConfig));
