@@ -13,15 +13,15 @@
     ],
     "require" : {
         "php" : ">=5.5.0",
-        "symfony/framework-bundle" : "~2.8|~3.0",
+        "symfony/framework-bundle" : "~3.0",
         "fxp/require-asset" : "1.0.*@dev",
         "fxp/require-asset-bundle" : "1.0.*@dev",
         "sonatra/ajax-bundle" : "1.0.*@dev",
-        "symfony/serializer": "~2.8|~3.0",
-        "symfony/form": "~2.8|~3.0"
+        "symfony/serializer": "~3.0",
+        "symfony/form": "~3.0"
     },
     "require-dev" : {
-        "symfony/doctrine-bridge" : "~2.8|~3.0",
+        "symfony/doctrine-bridge" : "~3.0",
         "doctrine/orm" : "~2.5"
     },
     "suggest": {
