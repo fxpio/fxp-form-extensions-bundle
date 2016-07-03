@@ -11,7 +11,7 @@
 
 namespace Sonatra\Bundle\FormExtensionsBundle\Tests\Form\Extension;
 
-use Sonatra\Bundle\FormExtensionsBundle\Form\Type\CurrencyType;
+use Symfony\Component\Form\Extension\Core\Type\CurrencyType;
 
 /**
  * Tests case for currency of select2 form extension type.

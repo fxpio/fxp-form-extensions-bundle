@@ -50,8 +50,6 @@ class SonatraFormExtensionsExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($container->hasDefinition('form.type_extension.sonatra.date_jquery'));
         $this->assertTrue($container->hasDefinition('form.type_extension.sonatra.time_jquery'));
         $this->assertTrue($container->hasDefinition('form.type_extension.sonatra.birthday_jquery'));
-
-        $this->assertTrue($container->hasDefinition('form.type.sonatra.currency'));
     }
 
     public function testExtensionLoaderWithDisabledConfig()
@@ -59,7 +57,6 @@ class SonatraFormExtensionsExtensionTest extends \PHPUnit_Framework_TestCase
         $container = $this->createContainer(array(
             'select2' => array('enabled' => false),
             'datetime_picker' => array('enabled' => false),
-            'currency' => array('enabled' => false),
         ));
 
         $this->assertFalse($container->hasDefinition('form.type_extension.sonatra.choice_select2'));
@@ -76,8 +73,6 @@ class SonatraFormExtensionsExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($container->hasDefinition('form.type_extension.sonatra.date_jquery'));
         $this->assertFalse($container->hasDefinition('form.type_extension.sonatra.time_jquery'));
         $this->assertFalse($container->hasDefinition('form.type_extension.sonatra.birthday_jquery'));
-
-        $this->assertFalse($container->hasDefinition('form.type.sonatra.currency'));
     }
 
     public function testExtensionLoaderWithCustomTwigResources()

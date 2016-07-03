@@ -54,9 +54,5 @@ class SonatraFormExtensionsExtension extends Extension
             $container->removeDefinition('form.type_extension.sonatra.time_jquery');
             $container->removeDefinition('form.type_extension.sonatra.birthday_jquery');
         }
-
-        if (!$config['currency']['enabled']) {
-            $container->removeDefinition('form.type.sonatra.currency');
-        }
     }
 }

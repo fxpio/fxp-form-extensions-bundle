@@ -41,9 +41,6 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
             'datetime_picker' => array(
                 'enabled' => true,
             ),
-            'currency' => array(
-                'enabled' => true,
-            ),
             'auto_configuration' => true,
         );
     }

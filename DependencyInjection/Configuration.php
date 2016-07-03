@@ -67,15 +67,6 @@ class Configuration implements ConfigurationInterface
                         ->booleanNode('enabled')->defaultTrue()->end()
                     ->end()
                 ->end()
-                ->arrayNode('currency')
-                    ->canBeUnset()
-                    ->treatNullLike(array('enabled' => true))
-                    ->treatTrueLike(array('enabled' => true))
-                    ->addDefaultsIfNotSet()
-                    ->children()
-                        ->booleanNode('enabled')->defaultTrue()->end()
-                    ->end()
-                ->end()
             ->end()
         ;
     }

@@ -5,11 +5,6 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <!-- Types -->
-        <service id="form.type.sonatra.currency" class="Sonatra\Bundle\FormExtensionsBundle\Form\Type\CurrencyType">
-            <tag name="form.type" />
-        </service>
-
         <!-- Extensions -->
         <service id="form.type_extension.sonatra.choice_select2" class="Sonatra\Bundle\FormExtensionsBundle\Form\Extension\ChoiceSelect2TypeExtension">
             <tag name="form.type_extension" extended-type="Symfony\Component\Form\Extension\Core\Type\ChoiceType" />
