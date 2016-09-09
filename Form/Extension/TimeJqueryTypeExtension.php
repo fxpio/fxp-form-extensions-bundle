@@ -26,6 +26,10 @@ class TimeJqueryTypeExtension extends DateTimeJqueryTypeExtension
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        if (!$options['time_picker']) {
+            return;
+        }
+
         $time_format = $options['with_seconds'] ? \IntlDateFormatter::MEDIUM : \IntlDateFormatter::SHORT;
 
         $builder->resetViewTransformers();
