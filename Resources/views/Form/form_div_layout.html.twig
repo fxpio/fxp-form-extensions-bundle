@@ -194,7 +194,11 @@
 {%- endblock datetime_widget %}
 
 {% block date_widget -%}
-    {{- block('datetime_widget') -}}
+    {%- if widget == 'single_text' -%}
+        {{- block('datetime_widget') -}}
+    {%- else -%}
+        {{- block('base_date_widget') -}}
+    {%- endif -%}
 {%- endblock date_widget %}
 
 {% block time_widget -%}

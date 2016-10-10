@@ -26,7 +26,7 @@ class TimeJqueryTypeExtension extends DateTimeJqueryTypeExtension
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        if (!$options['time_picker']) {
+        if ($options['widget'] !== 'single_text' || !$options['time_picker']) {
             return;
         }
 

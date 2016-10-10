@@ -29,6 +29,10 @@ class DateTimeJqueryTypeExtension extends AbstractTypeExtension
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
+        if ($options['widget'] !== 'single_text') {
+            return;
+        }
+
         $attr = $view->vars['attr'];
         $dataAttributes = array(
             'locale',
