@@ -67,7 +67,7 @@ abstract class AbstractDynamicChoiceLoader implements DynamicChoiceLoaderInterfa
      */
     public function setAllowAdd($allowAdd)
     {
-        $this->allowAdd = (boolean) $allowAdd;
+        $this->allowAdd = (bool) $allowAdd;
 
         return $this;
     }

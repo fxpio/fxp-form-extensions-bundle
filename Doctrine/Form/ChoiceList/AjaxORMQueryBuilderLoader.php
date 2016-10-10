@@ -72,7 +72,7 @@ class AjaxORMQueryBuilderLoader implements AjaxEntityLoaderInterface
     {
         if (null === $this->size) {
             $paginator = new Paginator($this->queryBuilder);
-            $this->size = (integer) $paginator->count();
+            $this->size = (int) $paginator->count();
         }
 
         return $this->size;
