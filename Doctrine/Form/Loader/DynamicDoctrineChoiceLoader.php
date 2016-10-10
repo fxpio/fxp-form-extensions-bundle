@@ -38,7 +38,7 @@ class DynamicDoctrineChoiceLoader extends AbstractDynamicChoiceLoader
      *
      * @param EntityLoaderInterface             $objectLoader The objects loader
      * @param IdReader                          $idReader     The reader for the object
-     *                                                        IDs.
+     *                                                        IDs
      * @param null|callable|string|PropertyPath $label        The callable or path generating the choice labels
      * @param ChoiceListFactoryInterface|null   $factory      The factory for creating
      *                                                        the loaded choice list

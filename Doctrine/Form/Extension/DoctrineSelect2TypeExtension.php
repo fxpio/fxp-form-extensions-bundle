@@ -167,7 +167,7 @@ abstract class DoctrineSelect2TypeExtension extends AbstractTypeExtension
      *                     they can't be determined
      *
      * @internal This method is public to be usable as callback. It should not
-     *           be used in user code.
+     *           be used in user code
      */
     abstract public function getQueryBuilderPartsForCachingHash($queryBuilder);
 }
