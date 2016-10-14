@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "839323a29dfc6147d4bcc857d62a74af",
+    "hash": "1ca9b077fdad6da38812307132153447",
     "content-hash": "be214e6d09a428268ff68f764cad6797",
     "packages": [
         {
@@ -205,12 +205,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fxpio/fxp-require-asset.git",
-                "reference": "dd152182aa1226112776dcdb2785450b3d806abe"
+                "reference": "71537437626e8ff5c2f3e3a70755460973715588"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/fxp-require-asset/zipball/dd152182aa1226112776dcdb2785450b3d806abe",
-                "reference": "dd152182aa1226112776dcdb2785450b3d806abe",
+                "url": "https://api.github.com/repos/fxpio/fxp-require-asset/zipball/71537437626e8ff5c2f3e3a70755460973715588",
+                "reference": "71537437626e8ff5c2f3e3a70755460973715588",
                 "shasum": ""
             },
             "require": {
@@ -235,7 +235,10 @@
             "autoload": {
                 "psr-4": {
                     "Fxp\\Component\\RequireAsset\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -259,7 +262,7 @@
                 "ui",
                 "user interface"
             ],
-            "time": "2016-10-05 08:29:07"
+            "time": "2016-10-14 11:27:02"
         },
         {
             "name": "fxp/require-asset-bundle",
@@ -267,12 +270,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fxpio/FxpRequireAssetBundle.git",
-                "reference": "ae0845c49560930f7c0741afa1f175780823050b"
+                "reference": "939ca4b394cb554007fbf0eca108924995d7a973"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/FxpRequireAssetBundle/zipball/ae0845c49560930f7c0741afa1f175780823050b",
-                "reference": "ae0845c49560930f7c0741afa1f175780823050b",
+                "url": "https://api.github.com/repos/fxpio/FxpRequireAssetBundle/zipball/939ca4b394cb554007fbf0eca108924995d7a973",
+                "reference": "939ca4b394cb554007fbf0eca108924995d7a973",
                 "shasum": ""
             },
             "require": {
@@ -295,7 +298,10 @@
             "autoload": {
                 "psr-4": {
                     "Fxp\\Bundle\\RequireAssetBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -321,7 +327,7 @@
                 "ui",
                 "user interface"
             ],
-            "time": "2016-10-05 08:33:51"
+            "time": "2016-10-14 11:32:22"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -547,12 +553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/SonatraAjaxBundle.git",
-                "reference": "90ba69a630009af7a174d717441900a5824b36ce"
+                "reference": "ff82ce5f24391eb6b5734f802809b0197eb950cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/SonatraAjaxBundle/zipball/90ba69a630009af7a174d717441900a5824b36ce",
-                "reference": "90ba69a630009af7a174d717441900a5824b36ce",
+                "url": "https://api.github.com/repos/sonatra/SonatraAjaxBundle/zipball/ff82ce5f24391eb6b5734f802809b0197eb950cb",
+                "reference": "ff82ce5f24391eb6b5734f802809b0197eb950cb",
                 "shasum": ""
             },
             "require": {
@@ -569,7 +575,10 @@
             "autoload": {
                 "psr-4": {
                     "Sonatra\\Bundle\\AjaxBundle\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -586,7 +595,7 @@
             "keywords": [
                 "AJAX response"
             ],
-            "time": "2016-07-03 11:37:05"
+            "time": "2016-10-14 11:40:01"
         },
         {
             "name": "symfony/asset",
