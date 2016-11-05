@@ -11,22 +11,7 @@ The Sonatra FormExtensionsBundle add form types.
 
 Features include:
 
-- Select2 Form Extension for:
-  * country form type
-  * language form type
-  * locale form type
-  * timezone form type
-  * currency form type
-  * choice form type
-  * entity form type
-  * collection form type
-  * collection entity form type
-- Select2 tags compatible for:
-  * collection form type
-  * collection entity form type
-- Select2 lazy loading for get the selected choices with a big repository
-- Select2 ajax formatter for build a custom ajax response
-- Select2 AJAX search filter compatible
+- All features of [Sonatra Form Extensions](https://github.com/sonatra/sonatra-form-extensions)
 - Select2 AJAX request with specific route optimized, already existing for:
   * country form type
   * language form type
@@ -35,9 +20,6 @@ Features include:
   * currency form type
 - Select2 AJAX request fallback to the same current URL if the route optimized is
   not defined (overrides the response for include the data of ajax request)
-- Datetime Picker Form Extension for Datetime Type, Date Type and Time Type
-- Currency Form Type
-- Responsive datetime picker jquery plugin (compatible with Twitter Bootstrap 3)
 
 Documentation
 -------------
@@ -63,7 +45,7 @@ About
 -----
 
 Sonatra FormExtensionsBundle is a [sonatra](https://github.com/sonatra) initiative.
-See also the list of [contributors](https://github.com/sonatra/SonatraFormExtensionsBundle/contributors).
+See also the list of [contributors](https://github.com/sonatra/SonatraFormExtensionsBundle/graphs/contributors).
 
 Reporting an issue or a feature request
 ---------------------------------------

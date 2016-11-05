@@ -1,7 +1,7 @@
 {
     "name" : "sonatra/form-extensions-bundle",
     "type": "symfony-bundle",
-    "description": "Add new form types for Symfony2",
+    "description": "Add new types for Symfony form",
     "keywords": ["datetime", "date", "time", "picker", "form", "hammerjs", "knob", "select2", "ajax"],
     "homepage": "https://github.com/sonatra/SonatraFormExtensionsBundle",
     "license": "MIT",
@@ -14,20 +14,14 @@
     "require" : {
         "php" : ">=5.5.0",
         "symfony/framework-bundle" : "~3.0",
-        "fxp/require-asset" : "1.0.*@dev",
-        "fxp/require-asset-bundle" : "1.0.*@dev",
-        "sonatra/ajax-bundle" : "1.0.*@dev",
-        "symfony/serializer": "~3.0",
-        "symfony/form": "~3.0"
+        "symfony/twig-bundle" : "~3.0",
+        "sonatra/ajax" : "~1.0@dev",
+        "sonatra/ajax-bundle" : "~1.0@dev",
+        "sonatra/form-extensions" : "~1.0@dev"
     },
-    "require-dev" : {
-        "symfony/doctrine-bridge" : "~3.0",
-        "doctrine/orm" : "~2.5"
-    },
-    "suggest": {
-        "fxp/composer-asset-plugin": "For manage NPM/Bower dependencies with Composer",
-        "bower-asset/select2": "The Select2 jquery plugin",
-        "bower-asset/sonatra-jquery-datetime-picker": "The datetime picker jquery plugin"
+    "require-dev": {
+        "fxp/require-asset" : "~1.0@dev",
+        "fxp/require-asset-bundle" : "~1.0@dev"
     },
     "autoload": {
         "psr-4": { "Sonatra\\Bundle\\FormExtensionsBundle\\": "" },

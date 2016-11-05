@@ -42,14 +42,14 @@ class AjaxFormControllerTest extends \PHPUnit_Framework_TestCase
     {
         $this->controller = new AjaxFormController();
         $this->request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
-        $this->helper = $this->getMockClass('Sonatra\Bundle\FormExtensionsBundle\Form\Helper\AjaxChoiceListHelper', array('generateResponse'));
+        $this->helper = $this->getMockClass('Sonatra\Component\FormExtensions\Form\Helper\AjaxChoiceListHelper', array('generateResponse'));
 
-        $ajaxFormatter = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
+        $ajaxFormatter = $this->getMockBuilder('Sonatra\Component\FormExtensions\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
         $ajaxFormatter->expects($this->any())
             ->method('formatResponseData')
             ->will($this->returnValue('AJAX_FORMATTER_MOCK'));
 
-        $ajaxChoiceLoader = $this->getMockBuilder('Sonatra\Bundle\FormExtensionsBundle\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
+        $ajaxChoiceLoader = $this->getMockBuilder('Sonatra\Component\FormExtensions\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
 
         $formBuilder = $this->getMockBuilder('Symfony\Component\Form\FormBuilderInterface')->getMock();
         $formBuilder->expects($this->any())

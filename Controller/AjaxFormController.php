@@ -11,7 +11,7 @@
 
 namespace Sonatra\Bundle\FormExtensionsBundle\Controller;
 
-use Sonatra\Bundle\FormExtensionsBundle\Form\Helper\AjaxChoiceListHelper;
+use Sonatra\Component\FormExtensions\Form\Helper\AjaxChoiceListHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
