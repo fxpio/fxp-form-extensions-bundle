@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Add new types for Symfony form",
     "keywords": ["datetime", "date", "time", "picker", "form", "hammerjs", "knob", "select2", "ajax"],
-    "homepage": "https://github.com/sonatra/SonatraFormExtensionsBundle",
+    "homepage": "https://github.com/sonatra/sonatra-form-extensions-bundle",
     "license": "MIT",
     "authors": [
         {
