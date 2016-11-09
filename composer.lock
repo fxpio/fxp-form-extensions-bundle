@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8764236272fcb4b35a652d834dabd393",
+    "hash": "96e850c3f3f63b1f3dd82ac6f96278a5",
     "content-hash": "9ffbd49c292ec977874d11ced66bf2a6",
     "packages": [
         {
@@ -201,16 +201,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.3",
+            "version": "v2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
+                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
-                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
+                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
                 "shasum": ""
             },
             "require": {
@@ -245,7 +245,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-10-17 15:23:22"
+            "time": "2016-11-07 23:38:38"
         },
         {
             "name": "psr/cache",
@@ -397,13 +397,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sonatra/SonatraAjaxBundle.git",
-                "reference": "d93d76b79f47b392092d8ad33cc8735b32b279b2"
+                "url": "https://github.com/sonatra/sonatra-ajax-bundle.git",
+                "reference": "e7cd8b5e5eacf9c1ae09c0cf6c3a6f24858b0a9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/SonatraAjaxBundle/zipball/d93d76b79f47b392092d8ad33cc8735b32b279b2",
-                "reference": "d93d76b79f47b392092d8ad33cc8735b32b279b2",
+                "url": "https://api.github.com/repos/sonatra/sonatra-ajax-bundle/zipball/e7cd8b5e5eacf9c1ae09c0cf6c3a6f24858b0a9b",
+                "reference": "e7cd8b5e5eacf9c1ae09c0cf6c3a6f24858b0a9b",
                 "shasum": ""
             },
             "require": {
@@ -437,11 +437,11 @@
                 }
             ],
             "description": "Intercept the ajax request identified by the event dispatcher",
-            "homepage": "https://github.com/sonatra/SonatraAjaxBundle",
+            "homepage": "https://github.com/sonatra/sonatra-ajax-bundle",
             "keywords": [
                 "AJAX response"
             ],
-            "time": "2016-11-05 14:02:07"
+            "time": "2016-11-09 09:51:16"
         },
         {
             "name": "sonatra/form-extensions",
@@ -2580,18 +2580,18 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fxpio/FxpRequireAssetBundle.git",
-                "reference": "939ca4b394cb554007fbf0eca108924995d7a973"
+                "url": "https://github.com/fxpio/fxp-require-asset-bundle.git",
+                "reference": "0ff34416903a29d09959c380633a339dca9cf757"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/FxpRequireAssetBundle/zipball/939ca4b394cb554007fbf0eca108924995d7a973",
-                "reference": "939ca4b394cb554007fbf0eca108924995d7a973",
+                "url": "https://api.github.com/repos/fxpio/fxp-require-asset-bundle/zipball/0ff34416903a29d09959c380633a339dca9cf757",
+                "reference": "0ff34416903a29d09959c380633a339dca9cf757",
                 "shasum": ""
             },
             "require": {
                 "fxp/require-asset": "1.0.*@dev",
-                "php": ">=5.5.0",
+                "php": ">=5.6.0",
                 "symfony/assetic-bundle": "~2.8",
                 "symfony/expression-language": "~3.0",
                 "symfony/framework-bundle": "~3.0",
@@ -2625,7 +2625,7 @@
                 }
             ],
             "description": "Symfony Bundle for required assets helper for assetic manager and twig",
-            "homepage": "https://github.com/fxpio/FxpRequireAssetBundle",
+            "homepage": "https://github.com/fxpio/fxp-require-asset-bundle",
             "keywords": [
                 "asset",
                 "assetic",
@@ -2638,7 +2638,7 @@
                 "ui",
                 "user interface"
             ],
-            "time": "2016-10-14 11:32:22"
+            "time": "2016-11-09 09:40:37"
         },
         {
             "name": "kriswallsmith/assetic",
