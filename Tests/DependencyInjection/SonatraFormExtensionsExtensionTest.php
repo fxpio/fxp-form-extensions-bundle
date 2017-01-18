@@ -12,11 +12,11 @@
 namespace Sonatra\Bundle\FormExtensionsBundle\Tests\DependencyInjection;
 
 use Fxp\Bundle\RequireAssetBundle\DependencyInjection\FxpRequireAssetExtension;
+use Sonatra\Bundle\FormExtensionsBundle\DependencyInjection\SonatraFormExtensionsExtension;
+use Sonatra\Bundle\FormExtensionsBundle\SonatraFormExtensionsBundle;
 use Symfony\Bundle\FrameworkBundle\DependencyInjection\FrameworkExtension;
 use Symfony\Bundle\TwigBundle\DependencyInjection\TwigExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Sonatra\Bundle\FormExtensionsBundle\SonatraFormExtensionsBundle;
-use Sonatra\Bundle\FormExtensionsBundle\DependencyInjection\SonatraFormExtensionsExtension;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**

@@ -11,8 +11,8 @@
 
 namespace Sonatra\Bundle\FormExtensionsBundle\Tests\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Processor;
 use Sonatra\Bundle\FormExtensionsBundle\DependencyInjection\Configuration;
+use Symfony\Component\Config\Definition\Processor;
 
 /**
  * Tests case for Configuration.
