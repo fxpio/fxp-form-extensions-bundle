@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "42da2a8dfec8c6cdfeac18aa1f06b3ab",
-    "content-hash": "9a66a2476dda251da86af57ae140579b",
+    "hash": "80eb0e2d7a230871a6b0f8f1a304762c",
+    "content-hash": "31d72cdb2fe84a657aea609e0c871e51",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -327,12 +327,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-form-extensions.git",
-                "reference": "2f7a6c3a132302978e00b48daa2e5a9da37ca411"
+                "reference": "d48fb288a8556ea394ae43a18b40b92eea91b98f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/2f7a6c3a132302978e00b48daa2e5a9da37ca411",
-                "reference": "2f7a6c3a132302978e00b48daa2e5a9da37ca411",
+                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/d48fb288a8556ea394ae43a18b40b92eea91b98f",
+                "reference": "d48fb288a8556ea394ae43a18b40b92eea91b98f",
                 "shasum": ""
             },
             "require": {
@@ -391,7 +391,7 @@
                 "select2",
                 "time"
             ],
-            "time": "2017-01-19 14:02:18"
+            "time": "2017-01-19 14:13:54"
         },
         {
             "name": "symfony/cache",
@@ -2506,7 +2506,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0"
+        "php": ">=7.0.0"
     },
     "platform-dev": []
 }
