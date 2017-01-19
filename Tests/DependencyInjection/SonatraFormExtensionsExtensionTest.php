@@ -86,7 +86,7 @@ class SonatraFormExtensionsExtensionTest extends \PHPUnit_Framework_TestCase
         $resources = $container->getParameter('twig.form.resources');
         $this->assertEquals(array(
             'form_div_layout.html.twig',
-            'SonatraFormExtensionsBundle:Form:form_div_layout.html.twig',
+            '@SonatraFormExtensions/Form/form_div_layout.html.twig',
             'TestBundle:Form:form_test.html.twig',
         ), $resources);
     }
