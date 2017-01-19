@@ -101,6 +101,7 @@ class SonatraFormExtensionsExtensionTest extends \PHPUnit_Framework_TestCase
                 'TwigBundle' => 'Symfony\\Bundle\\TwigBundle\\TwigBundle',
                 'SonatraFormExtensionsBundle' => 'Sonatra\\Bundle\\FormExtensionsBundle\\SonatraFormExtensionsBundle',
             ),
+            'kernel.bundles_metadata' => array(),
             'kernel.cache_dir' => __DIR__,
             'kernel.debug' => false,
             'kernel.environment' => 'test',

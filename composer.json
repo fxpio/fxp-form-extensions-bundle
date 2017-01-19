@@ -13,8 +13,8 @@
     ],
     "require" : {
         "php" : ">=5.6.0",
-        "symfony/framework-bundle" : "~3.0",
-        "symfony/twig-bundle" : "~3.0",
+        "symfony/framework-bundle" : "~3.2",
+        "symfony/twig-bundle" : "~3.2",
         "sonatra/ajax" : "~1.0@dev",
         "sonatra/ajax-bundle" : "~1.0@dev",
         "sonatra/form-extensions" : "~1.0@dev"
