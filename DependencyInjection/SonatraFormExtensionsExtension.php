@@ -54,5 +54,9 @@ class SonatraFormExtensionsExtension extends Extension
             $container->removeDefinition('form.type_extension.sonatra.time_jquery');
             $container->removeDefinition('form.type_extension.sonatra.birthday_jquery');
         }
+
+        if (class_exists('Symfony\Bridge\Doctrine\Form\Type\EntityType')) {
+            $loader->load('orm_form.xml');
+        }
     }
 }
