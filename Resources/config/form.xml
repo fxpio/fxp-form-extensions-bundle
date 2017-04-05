@@ -43,10 +43,6 @@
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Component\Form\Extension\Core\Type\CollectionType" />
         </service>
 
-        <service id="form.type_extension.sonatra.entity_select2" class="Sonatra\Component\FormExtensions\Doctrine\Form\Extension\EntitySelect2TypeExtension">
-            <tag name="form.type_extension" priority="200" extended-type="Symfony\Bridge\Doctrine\Form\Type\EntityType" />
-        </service>
-
         <service id="form.type_extension.sonatra.datetime_jquery" class="Sonatra\Component\FormExtensions\Form\Extension\DateTimeJqueryTypeExtension">
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Component\Form\Extension\Core\Type\DateTimeType" />
         </service>

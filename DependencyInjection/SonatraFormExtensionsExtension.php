@@ -30,11 +30,16 @@ class SonatraFormExtensionsExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $withOrm = class_exists('Symfony\Bridge\Doctrine\Form\Type\EntityType');
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('form.xml');
 
         $container->setParameter('sonatra_form_extensions.config.auto_configuration', $config['auto_configuration']);
+
+        if ($withOrm) {
+            $loader->load('orm_form.xml');
+        }
 
         if (!$config['select2']['enabled']) {
             $container->removeDefinition('form.type_extension.sonatra.choice_select2');
@@ -44,8 +49,13 @@ class SonatraFormExtensionsExtension extends Extension
             $container->removeDefinition('form.type_extension.sonatra.locale_select2');
             $container->removeDefinition('form.type_extension.sonatra.timezone_select2');
             $container->removeDefinition('form.type_extension.sonatra.collection_select2');
-            $container->removeDefinition('form.type_extension.sonatra.entity_select2');
-            $container->removeDefinition('form.type_extension.sonatra.entity_collection_select2');
+
+            if ($withOrm) {
+                $container->removeDefinition('form.type_extension.sonatra.entity_select2');
+                $container->removeDefinition('form.type_extension.sonatra.sonatra_entity_select2');
+                $container->removeDefinition('form.type_extension.sonatra.entity_collection_select2');
+                $container->removeDefinition('form.type_extension.sonatra.sonatra_entity_collection_select2');
+            }
         }
 
         if (!$config['datetime_picker']['enabled']) {
@@ -53,10 +63,6 @@ class SonatraFormExtensionsExtension extends Extension
             $container->removeDefinition('form.type_extension.sonatra.date_jquery');
             $container->removeDefinition('form.type_extension.sonatra.time_jquery');
             $container->removeDefinition('form.type_extension.sonatra.birthday_jquery');
-        }
-
-        if (class_exists('Symfony\Bridge\Doctrine\Form\Type\EntityType')) {
-            $loader->load('orm_form.xml');
         }
     }
 }

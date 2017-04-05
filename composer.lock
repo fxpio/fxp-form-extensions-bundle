@@ -326,12 +326,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-form-extensions.git",
-                "reference": "848289b03c429fdc42be9329da43458b284daa1f"
+                "reference": "024762220b43771b5d108ee315257b634708212a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/848289b03c429fdc42be9329da43458b284daa1f",
-                "reference": "848289b03c429fdc42be9329da43458b284daa1f",
+                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/024762220b43771b5d108ee315257b634708212a",
+                "reference": "024762220b43771b5d108ee315257b634708212a",
                 "shasum": ""
             },
             "require": {
@@ -385,7 +385,7 @@
                 "select2",
                 "time"
             ],
-            "time": "2017-04-04T19:03:38+00:00"
+            "time": "2017-04-05T10:33:08+00:00"
         },
         {
             "name": "symfony/cache",
