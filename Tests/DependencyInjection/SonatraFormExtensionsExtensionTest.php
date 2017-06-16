@@ -11,6 +11,7 @@
 
 namespace Sonatra\Bundle\FormExtensionsBundle\Tests\DependencyInjection;
 
+use PHPUnit\Framework\TestCase;
 use Sonatra\Bundle\FormExtensionsBundle\DependencyInjection\SonatraFormExtensionsExtension;
 use Sonatra\Bundle\FormExtensionsBundle\SonatraFormExtensionsBundle;
 use Symfony\Bundle\FrameworkBundle\DependencyInjection\FrameworkExtension;
@@ -25,7 +26,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
  *
  * @author François Pluchino <francois.pluchino@sonatra.com>
  */
-class SonatraFormExtensionsExtensionTest extends \PHPUnit_Framework_TestCase
+class SonatraFormExtensionsExtensionTest extends TestCase
 {
     public function testExtensionExist()
     {

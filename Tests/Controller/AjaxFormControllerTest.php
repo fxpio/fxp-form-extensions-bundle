@@ -11,6 +11,7 @@
 
 namespace Sonatra\Bundle\FormExtensionsBundle\Tests\Controller;
 
+use PHPUnit\Framework\TestCase;
 use Sonatra\Bundle\FormExtensionsBundle\Controller\AjaxFormController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +22,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author François Pluchino <francois.pluchino@sonatra.com>
  */
-class AjaxFormControllerTest extends \PHPUnit_Framework_TestCase
+class AjaxFormControllerTest extends TestCase
 {
     /**
      * @var AjaxFormController
