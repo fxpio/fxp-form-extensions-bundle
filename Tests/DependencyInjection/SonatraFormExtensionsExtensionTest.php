@@ -123,12 +123,13 @@ class SonatraFormExtensionsExtensionTest extends TestCase
         $container->registerExtension($extension);
 
         $sfExt->load(array(), $container);
-        $twigExt->load($twigConfigs, $container);
         $extension->load($configs, $container);
 
         if (!empty($twigConfigs)) {
             $container->prependExtensionConfig('twig', $twigConfigs[0]);
             $container->setDefinition('twig.loader.filesystem', new Definition(TwigEngine::class));
+        } else {
+            $twigExt->load($twigConfigs, $container);
         }
 
         $bundle = new SonatraFormExtensionsBundle();
