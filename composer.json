@@ -23,7 +23,13 @@
     "require-dev" : {
         "symfony/doctrine-bridge" : "^3.3.0",
         "symfony/translation": "^3.3.0",
-        "symfony/validator": "^3.3.0"
+        "symfony/validator": "^3.3.0",
+        "foxy/foxy": "^1.0.0"
+    },
+    "config": {
+        "foxy": {
+            "enabled": false
+        }
     },
     "autoload": {
         "psr-4": { "Sonatra\\Bundle\\FormExtensionsBundle\\": "" },
