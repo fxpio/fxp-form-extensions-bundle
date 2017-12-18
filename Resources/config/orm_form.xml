@@ -5,16 +5,16 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="form.type_extension.sonatra.entity_select2" class="Sonatra\Component\FormExtensions\Doctrine\Form\Extension\EntitySelect2TypeExtension">
+        <service id="form.type_extension.sonatra.entity_select2" class="Sonatra\Component\FormExtensions\Doctrine\Form\Extension\EntitySelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Bridge\Doctrine\Form\Type\EntityType" />
         </service>
 
-        <service id="form.type_extension.sonatra.sonatra_entity_select2" class="Sonatra\Component\FormExtensions\Doctrine\Form\Extension\EntitySelect2TypeExtension">
+        <service id="form.type_extension.sonatra.sonatra_entity_select2" class="Sonatra\Component\FormExtensions\Doctrine\Form\Extension\EntitySelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Sonatra\Component\FormExtensions\Doctrine\Form\Type\EntityType" />
             <argument>Sonatra\Component\FormExtensions\Doctrine\Form\Type\EntityType</argument>
         </service>
 
-        <service id="form.type.sonatra.entity" class="Sonatra\Component\FormExtensions\Doctrine\Form\Type\EntityType">
+        <service id="form.type.sonatra.entity" class="Sonatra\Component\FormExtensions\Doctrine\Form\Type\EntityType" public="true">
             <tag name="form.type" alias="sonatra_entity" />
             <argument type="service" id="doctrine" />
         </service>
