@@ -14,16 +14,16 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require" : {
-        "php" : ">=7.0.0",
-        "symfony/framework-bundle" : "^3.3.0",
-        "symfony/twig-bundle" : "^3.3.0",
+        "php" : "^7.1.0",
+        "symfony/framework-bundle" : "^3.4.0|^4.0.0",
+        "symfony/twig-bundle" : "^3.4.0|^4.0.0",
         "sonatra/ajax-bundle" : "^1.0.0",
         "sonatra/form-extensions" : "^1.0.0"
     },
     "require-dev" : {
-        "symfony/doctrine-bridge" : "^3.3.0",
-        "symfony/translation": "^3.3.0",
-        "symfony/validator": "^3.3.0",
+        "symfony/doctrine-bridge" : "^3.4.0|^4.0.0",
+        "symfony/translation": "^3.4.0|^4.0.0",
+        "symfony/validator": "^3.4.0|^4.0.0",
         "foxy/foxy": "^1.0.0"
     },
     "config": {
