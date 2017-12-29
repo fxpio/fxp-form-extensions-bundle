@@ -56,10 +56,10 @@ class FxpFormExtensionsExtensionTest extends TestCase
 
     public function testExtensionLoaderWithDisabledConfig()
     {
-        $container = $this->createContainer(array(
-            'select2' => array('enabled' => false),
-            'datetime_picker' => array('enabled' => false),
-        ));
+        $container = $this->createContainer([
+            'select2' => ['enabled' => false],
+            'datetime_picker' => ['enabled' => false],
+        ]);
 
         $this->assertFalse($container->hasDefinition('form.type_extension.fxp.choice_select2'));
         $this->assertFalse($container->hasDefinition('form.type_extension.fxp.country_select2'));
@@ -79,31 +79,31 @@ class FxpFormExtensionsExtensionTest extends TestCase
 
     public function testExtensionLoaderWithCustomTwigResources()
     {
-        $container = $this->createContainer(array(), array(
-            'form_themes' => array(
+        $container = $this->createContainer([], [
+            'form_themes' => [
                 '@Test/Form/form_test.html.twig',
-            ),
-        ));
+            ],
+        ]);
 
         $resources = $container->getParameter('twig.form.resources');
-        $this->assertEquals(array(
+        $this->assertEquals([
             'form_div_layout.html.twig',
             '@FxpFormExtensions/Form/form_div_layout.html.twig',
             '@Test/Form/form_test.html.twig',
-        ), $resources);
+        ], $resources);
     }
 
-    protected function createContainer(array $config = array(), array $twigConfig = array())
+    protected function createContainer(array $config = [], array $twigConfig = [])
     {
-        $configs = empty($config) ? array() : array($config);
-        $twigConfigs = empty($twigConfig) ? array() : array($twigConfig);
-        $container = new ContainerBuilder(new ParameterBag(array(
-            'kernel.bundles' => array(
+        $configs = empty($config) ? [] : [$config];
+        $twigConfigs = empty($twigConfig) ? [] : [$twigConfig];
+        $container = new ContainerBuilder(new ParameterBag([
+            'kernel.bundles' => [
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
                 'TwigBundle' => 'Symfony\\Bundle\\TwigBundle\\TwigBundle',
                 'FxpFormExtensionsBundle' => 'Fxp\\Bundle\\FormExtensionsBundle\\FxpFormExtensionsBundle',
-            ),
-            'kernel.bundles_metadata' => array(),
+            ],
+            'kernel.bundles_metadata' => [],
             'kernel.cache_dir' => __DIR__,
             'kernel.debug' => false,
             'kernel.environment' => 'test',
@@ -113,7 +113,7 @@ class FxpFormExtensionsExtensionTest extends TestCase
             'kernel.charset' => 'UTF-8',
             'locale' => 'en',
             'assetic.debug' => true,
-        )));
+        ]));
 
         $sfExt = new FrameworkExtension();
         $twigExt = new TwigExtension();
@@ -123,7 +123,7 @@ class FxpFormExtensionsExtensionTest extends TestCase
         $container->registerExtension($twigExt);
         $container->registerExtension($extension);
 
-        $sfExt->load(array(), $container);
+        $sfExt->load([], $container);
         $extension->load($configs, $container);
 
         if (!empty($twigConfigs)) {
@@ -136,8 +136,8 @@ class FxpFormExtensionsExtensionTest extends TestCase
         $bundle = new FxpFormExtensionsBundle();
         $bundle->build($container);
 
-        $container->getCompilerPassConfig()->setOptimizationPasses(array());
-        $container->getCompilerPassConfig()->setRemovingPasses(array());
+        $container->getCompilerPassConfig()->setOptimizationPasses([]);
+        $container->getCompilerPassConfig()->setRemovingPasses([]);
         $container->compile();
 
         return $container;

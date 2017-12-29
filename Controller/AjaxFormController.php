@@ -33,6 +33,6 @@ class AjaxFormController extends Controller
     {
         return AjaxChoiceListHelper::generateResponse($request,
             $this->get('form.factory')->createBuilder($type, null,
-                array('select2' => array('enabled' => true, 'ajax' => true))));
+                ['select2' => ['enabled' => true, 'ajax' => true]]));
     }
 }

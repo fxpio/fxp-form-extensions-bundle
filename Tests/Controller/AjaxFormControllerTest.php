@@ -43,7 +43,7 @@ class AjaxFormControllerTest extends TestCase
     {
         $this->controller = new AjaxFormController();
         $this->request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
-        $this->helper = $this->getMockClass('Fxp\Component\FormExtensions\Form\Helper\AjaxChoiceListHelper', array('generateResponse'));
+        $this->helper = $this->getMockClass('Fxp\Component\FormExtensions\Form\Helper\AjaxChoiceListHelper', ['generateResponse']);
 
         $ajaxFormatter = $this->getMockBuilder('Fxp\Component\FormExtensions\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
         $ajaxFormatter->expects($this->any())
@@ -57,9 +57,9 @@ class AjaxFormControllerTest extends TestCase
             ->method('getAttribute')
             ->will($this->returnCallback(function ($value) use ($ajaxFormatter, $ajaxChoiceLoader) {
                 if ('select2' === $value) {
-                    return array(
+                    return [
                         'ajax_formatter' => $ajaxFormatter,
-                    );
+                    ];
                 } elseif ('choice_loader') {
                     return $ajaxChoiceLoader;
                 }

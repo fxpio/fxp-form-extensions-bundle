@@ -25,24 +25,24 @@ class ConfigurationTest extends TestCase
     public function testDefaultConfig()
     {
         $processor = new Processor();
-        $config = $processor->processConfiguration(new Configuration(), array(array()));
+        $config = $processor->processConfiguration(new Configuration(), [[]]);
 
         $this->assertEquals(
-                array_merge(array(), self::getBundleDefaultConfig()),
+                array_merge([], self::getBundleDefaultConfig()),
                 $config
         );
     }
 
     protected static function getBundleDefaultConfig()
     {
-        return array(
-            'select2' => array(
+        return [
+            'select2' => [
                 'enabled' => true,
-            ),
-            'datetime_picker' => array(
+            ],
+            'datetime_picker' => [
                 'enabled' => true,
-            ),
+            ],
             'auto_configuration' => true,
-        );
+        ];
     }
 }
