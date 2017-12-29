@@ -3,28 +3,28 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="sonatra_form_extensions_ajax_country" path="/ajax/country-choice-list" methods="GET">
-        <default key="_controller">SonatraFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
+    <route id="fxp_form_extensions_ajax_country" path="/ajax/country-choice-list" methods="GET">
+        <default key="_controller">FxpFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
         <default key="type">country</default>
     </route>
 
-    <route id="sonatra_form_extensions_ajax_currency" path="/ajax/currency-choice-list" methods="GET">
-        <default key="_controller">SonatraFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
+    <route id="fxp_form_extensions_ajax_currency" path="/ajax/currency-choice-list" methods="GET">
+        <default key="_controller">FxpFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
         <default key="type">currency</default>
     </route>
 
-    <route id="sonatra_form_extensions_ajax_language" path="/ajax/language-choice-list" methods="GET">
-        <default key="_controller">SonatraFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
+    <route id="fxp_form_extensions_ajax_language" path="/ajax/language-choice-list" methods="GET">
+        <default key="_controller">FxpFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
         <default key="type">language</default>
     </route>
 
-    <route id="sonatra_form_extensions_ajax_locale" path="/ajax/locale-choice-list" methods="GET">
-        <default key="_controller">SonatraFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
+    <route id="fxp_form_extensions_ajax_locale" path="/ajax/locale-choice-list" methods="GET">
+        <default key="_controller">FxpFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
         <default key="type">locale</default>
     </route>
 
-    <route id="sonatra_form_extensions_ajax_timezone" path="/ajax/timezone-choice-list" methods="GET">
-        <default key="_controller">SonatraFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
+    <route id="fxp_form_extensions_ajax_timezone" path="/ajax/timezone-choice-list" methods="GET">
+        <default key="_controller">FxpFormExtensionsBundle:AjaxForm:ajaxChoiceList</default>
         <default key="type">timezone</default>
     </route>
 </routes>

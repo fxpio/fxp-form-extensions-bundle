@@ -4,8 +4,179 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba6d5606072b53962121f2d8dc7989b4",
+    "content-hash": "2f111f56940be097ef2963a08759941e",
     "packages": [
+        {
+            "name": "fxp/ajax",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fxpio/fxp-ajax.git",
+                "reference": "28a421214f5e2f2754ce557f0dc4db9d771823a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fxpio/fxp-ajax/zipball/28a421214f5e2f2754ce557f0dc4db9d771823a2",
+                "reference": "28a421214f5e2f2754ce557f0dc4db9d771823a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.0",
+                "symfony/event-dispatcher": "^3.4.0|^4.0.0",
+                "symfony/http-foundation": "^3.4.0|^4.0.0",
+                "symfony/http-kernel": "^3.4.0|^4.0.0",
+                "symfony/serializer": "^3.4.0|^4.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Component\\Ajax\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "Intercept the ajax request identified by the event dispatcher",
+            "homepage": "https://github.com/fxpio/fxp-ajax",
+            "keywords": [
+                "AJAX response"
+            ],
+            "time": "2017-12-28T16:19:54+00:00"
+        },
+        {
+            "name": "fxp/ajax-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fxpio/fxp-ajax-bundle.git",
+                "reference": "c8ca601ccccafe2ae24776c22b41757fb38cb61c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fxpio/fxp-ajax-bundle/zipball/c8ca601ccccafe2ae24776c22b41757fb38cb61c",
+                "reference": "c8ca601ccccafe2ae24776c22b41757fb38cb61c",
+                "shasum": ""
+            },
+            "require": {
+                "fxp/ajax": "^1.0.0",
+                "php": "^7.1.0",
+                "symfony/framework-bundle": "^3.4.0|^4.0.0",
+                "symfony/serializer": "^3.4.0|^4.0.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Bundle\\AjaxBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "Intercept the ajax request identified by the event dispatcher",
+            "homepage": "https://github.com/fxpio/fxp-ajax-bundle",
+            "keywords": [
+                "AJAX response"
+            ],
+            "time": "2017-12-28T16:47:42+00:00"
+        },
+        {
+            "name": "fxp/form-extensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fxpio/fxp-form-extensions.git",
+                "reference": "7ebe92670602c6a501a1a27b918a48e96087b6d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fxpio/fxp-form-extensions/zipball/7ebe92670602c6a501a1a27b918a48e96087b6d9",
+                "reference": "7ebe92670602c6a501a1a27b918a48e96087b6d9",
+                "shasum": ""
+            },
+            "require": {
+                "fxp/ajax": "^1.0.0",
+                "php": "^7.1.0",
+                "symfony/event-dispatcher": "^3.4.0|^4.0.0",
+                "symfony/form": "^3.4.0|^4.0.0",
+                "symfony/http-foundation": "^3.4.0|^4.0.0",
+                "symfony/property-access": "^3.4.0|^4.0.0",
+                "symfony/routing": "^3.4.0|^4.0.0",
+                "symfony/serializer": "^3.4.0|^4.0.0"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.6.0",
+                "foxy/foxy": "^1.0.0",
+                "symfony/doctrine-bridge": "^3.4.0|^4.0.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Component\\FormExtensions\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "Add new types for Symfony form",
+            "homepage": "https://github.com/fxpio/fxp-form-extensions",
+            "keywords": [
+                "ajax",
+                "date",
+                "datetime",
+                "form",
+                "hammerjs",
+                "knob",
+                "picker",
+                "select2",
+                "time"
+            ],
+            "time": "2017-12-29T16:16:24+00:00"
+        },
         {
             "name": "psr/cache",
             "version": "1.0.1",
@@ -195,177 +366,6 @@
                 "simple-cache"
             ],
             "time": "2017-01-02T13:31:39+00:00"
-        },
-        {
-            "name": "sonatra/ajax",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sonatra/sonatra-ajax.git",
-                "reference": "e236ee05bcf5c74412f599508372f986bc2ad20e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-ajax/zipball/e236ee05bcf5c74412f599508372f986bc2ad20e",
-                "reference": "e236ee05bcf5c74412f599508372f986bc2ad20e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.0",
-                "symfony/event-dispatcher": "^3.4.0|^4.0.0",
-                "symfony/http-foundation": "^3.4.0|^4.0.0",
-                "symfony/http-kernel": "^3.4.0|^4.0.0",
-                "symfony/serializer": "^3.4.0|^4.0.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Sonatra\\Component\\Ajax\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Pluchino",
-                    "email": "francois.pluchino@sonatra.com"
-                }
-            ],
-            "description": "Intercept the ajax request identified by the event dispatcher",
-            "homepage": "https://github.com/sonatra/sonatra-ajax",
-            "keywords": [
-                "AJAX response"
-            ],
-            "time": "2017-12-26T17:25:47+00:00"
-        },
-        {
-            "name": "sonatra/ajax-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sonatra/sonatra-ajax-bundle.git",
-                "reference": "3b3ee0b7c6a9e89a52e5038736b35d44264f36fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-ajax-bundle/zipball/3b3ee0b7c6a9e89a52e5038736b35d44264f36fa",
-                "reference": "3b3ee0b7c6a9e89a52e5038736b35d44264f36fa",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.0",
-                "sonatra/ajax": "^1.0.0",
-                "symfony/framework-bundle": "^3.4.0|^4.0.0",
-                "symfony/serializer": "^3.4.0|^4.0.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Sonatra\\Bundle\\AjaxBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Pluchino",
-                    "email": "francois.pluchino@sonatra.com"
-                }
-            ],
-            "description": "Intercept the ajax request identified by the event dispatcher",
-            "homepage": "https://github.com/sonatra/sonatra-ajax-bundle",
-            "keywords": [
-                "AJAX response"
-            ],
-            "time": "2017-12-26T17:26:18+00:00"
-        },
-        {
-            "name": "sonatra/form-extensions",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sonatra/sonatra-form-extensions.git",
-                "reference": "0fb2655e22cdf0e84416d53e24749e8d16dc63e4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/0fb2655e22cdf0e84416d53e24749e8d16dc63e4",
-                "reference": "0fb2655e22cdf0e84416d53e24749e8d16dc63e4",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1.0",
-                "sonatra/ajax": "^1.0.0",
-                "symfony/event-dispatcher": "^3.4.0|^4.0.0",
-                "symfony/form": "^3.4.0|^4.0.0",
-                "symfony/http-foundation": "^3.4.0|^4.0.0",
-                "symfony/property-access": "^3.4.0|^4.0.0",
-                "symfony/routing": "^3.4.0|^4.0.0",
-                "symfony/serializer": "^3.4.0|^4.0.0"
-            },
-            "require-dev": {
-                "doctrine/orm": "^2.6.0",
-                "foxy/foxy": "^1.0.0",
-                "symfony/doctrine-bridge": "^3.4.0|^4.0.0"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Sonatra\\Component\\FormExtensions\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Pluchino",
-                    "email": "francois.pluchino@sonatra.com"
-                }
-            ],
-            "description": "Add new types for Symfony form",
-            "homepage": "https://github.com/sonatra/sonatra-form-extensions",
-            "keywords": [
-                "ajax",
-                "date",
-                "datetime",
-                "form",
-                "hammerjs",
-                "knob",
-                "picker",
-                "select2",
-                "time"
-            ],
-            "time": "2017-12-27T11:18:04+00:00"
         },
         {
             "name": "symfony/cache",
@@ -2279,16 +2279,16 @@
         },
         {
             "name": "foxy/foxy",
-            "version": "v1.0.0-beta2",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/foxypkg/foxy.git",
-                "reference": "87af57c641a15fa372caeb0c85a08e9f34f1ea33"
+                "url": "https://github.com/fxpio/foxy.git",
+                "reference": "c8225f715cbe0b9310972e3d67ca15955691a26e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/foxypkg/foxy/zipball/87af57c641a15fa372caeb0c85a08e9f34f1ea33",
-                "reference": "87af57c641a15fa372caeb0c85a08e9f34f1ea33",
+                "url": "https://api.github.com/repos/fxpio/foxy/zipball/c8225f715cbe0b9310972e3d67ca15955691a26e",
+                "reference": "c8225f715cbe0b9310972e3d67ca15955691a26e",
                 "shasum": ""
             },
             "require": {
@@ -2324,7 +2324,7 @@
                 }
             ],
             "description": "Fast, reliable, and secure NPM/Yarn bridge for Composer",
-            "homepage": "https://github.com/foxypkg/foxy",
+            "homepage": "https://github.com/fxpio/foxy",
             "keywords": [
                 "Bridge",
                 "asset",
@@ -2335,7 +2335,7 @@
                 "package",
                 "yarn"
             ],
-            "time": "2017-10-03T14:33:14+00:00"
+            "time": "2017-12-28T12:45:51+00:00"
         },
         {
             "name": "symfony/doctrine-bridge",

@@ -1,18 +1,18 @@
 <?php
 
 /*
- * This file is part of the Sonatra package.
+ * This file is part of the Fxp package.
  *
- * (c) François Pluchino <francois.pluchino@sonatra.com>
+ * (c) François Pluchino <francois.pluchino@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\FormExtensionsBundle\Tests\Controller;
+namespace Fxp\Bundle\FormExtensionsBundle\Tests\Controller;
 
+use Fxp\Bundle\FormExtensionsBundle\Controller\AjaxFormController;
 use PHPUnit\Framework\TestCase;
-use Sonatra\Bundle\FormExtensionsBundle\Controller\AjaxFormController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Tests case for controller.
  *
- * @author François Pluchino <francois.pluchino@sonatra.com>
+ * @author François Pluchino <francois.pluchino@gmail.com>
  */
 class AjaxFormControllerTest extends TestCase
 {
@@ -43,14 +43,14 @@ class AjaxFormControllerTest extends TestCase
     {
         $this->controller = new AjaxFormController();
         $this->request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
-        $this->helper = $this->getMockClass('Sonatra\Component\FormExtensions\Form\Helper\AjaxChoiceListHelper', array('generateResponse'));
+        $this->helper = $this->getMockClass('Fxp\Component\FormExtensions\Form\Helper\AjaxChoiceListHelper', array('generateResponse'));
 
-        $ajaxFormatter = $this->getMockBuilder('Sonatra\Component\FormExtensions\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
+        $ajaxFormatter = $this->getMockBuilder('Fxp\Component\FormExtensions\Form\ChoiceList\Formatter\AjaxChoiceListFormatterInterface')->getMock();
         $ajaxFormatter->expects($this->any())
             ->method('formatResponseData')
             ->will($this->returnValue('AJAX_FORMATTER_MOCK'));
 
-        $ajaxChoiceLoader = $this->getMockBuilder('Sonatra\Component\FormExtensions\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
+        $ajaxChoiceLoader = $this->getMockBuilder('Fxp\Component\FormExtensions\Form\ChoiceList\Loader\AjaxChoiceLoaderInterface')->getMock();
 
         $formBuilder = $this->getMockBuilder('Symfony\Component\Form\FormBuilderInterface')->getMock();
         $formBuilder->expects($this->any())
