@@ -27,13 +27,13 @@ class AddTemplatePathPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('twig.loader.filesystem')) {
+        if (!$container->hasDefinition('twig.loader.native_filesystem')) {
             return;
         }
 
         $refl = new \ReflectionClass(GetAjaxChoiceListEvent::class);
 
         $path = dirname(dirname($refl->getFileName())).'/Resources/views';
-        $container->getDefinition('twig.loader.filesystem')->addMethodCall('addPath', [$path, 'FxpFormExtensions']);
+        $container->getDefinition('twig.loader.native_filesystem')->addMethodCall('addPath', [$path, 'FxpFormExtensions']);
     }
 }
