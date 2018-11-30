@@ -12,14 +12,14 @@
 namespace Fxp\Bundle\FormExtensionsBundle\Controller;
 
 use Fxp\Component\FormExtensions\Form\Helper\AjaxChoiceListHelper;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class AjaxFormController extends Controller
+class AjaxFormController extends AbstractController
 {
     /**
      * Gets the ajax response of choice list.
