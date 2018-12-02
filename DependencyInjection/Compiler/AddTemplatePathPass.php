@@ -33,7 +33,7 @@ class AddTemplatePathPass implements CompilerPassInterface
 
         $refl = new \ReflectionClass(GetAjaxChoiceListEvent::class);
 
-        $path = dirname(dirname($refl->getFileName())).'/Resources/views';
+        $path = \dirname(\dirname($refl->getFileName())).'/Resources/views';
         $container->getDefinition('twig.loader.filesystem')->addMethodCall('addPath', [$path, 'FxpFormExtensions']);
     }
 }
