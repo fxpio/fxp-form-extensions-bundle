@@ -11,32 +11,26 @@
             <argument type="service" id="event_dispatcher" />
             <argument type="service" id="request_stack" />
             <argument type="service" id="router" />
-            <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         </service>
 
-        <service id="form.type_extension.fxp.country_select2" class="Fxp\Component\FormExtensions\Form\Extension\BaseChoiceSelect2TypeExtension" public="true">
+        <service id="form.type_extension.fxp.country_select2" class="Fxp\Component\FormExtensions\Form\Extension\CountrySelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Component\Form\Extension\Core\Type\CountryType" />
-            <argument>Symfony\Component\Form\Extension\Core\Type\CountryType</argument>
         </service>
 
-        <service id="form.type_extension.fxp.currency_select2" class="Fxp\Component\FormExtensions\Form\Extension\BaseChoiceSelect2TypeExtension" public="true">
+        <service id="form.type_extension.fxp.currency_select2" class="Fxp\Component\FormExtensions\Form\Extension\CurrencySelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Component\Form\Extension\Core\Type\CurrencyType" />
-            <argument>Symfony\Component\Form\Extension\Core\Type\CurrencyType</argument>
         </service>
 
-        <service id="form.type_extension.fxp.language_select2" class="Fxp\Component\FormExtensions\Form\Extension\BaseChoiceSelect2TypeExtension" public="true">
+        <service id="form.type_extension.fxp.language_select2" class="Fxp\Component\FormExtensions\Form\Extension\LanguageSelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Component\Form\Extension\Core\Type\LanguageType" />
-            <argument>Symfony\Component\Form\Extension\Core\Type\LanguageType</argument>
         </service>
 
-        <service id="form.type_extension.fxp.locale_select2" class="Fxp\Component\FormExtensions\Form\Extension\BaseChoiceSelect2TypeExtension" public="true">
+        <service id="form.type_extension.fxp.locale_select2" class="Fxp\Component\FormExtensions\Form\Extension\LocaleSelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Component\Form\Extension\Core\Type\LocaleType" />
-            <argument>Symfony\Component\Form\Extension\Core\Type\LocaleType</argument>
         </service>
 
-        <service id="form.type_extension.fxp.timezone_select2" class="Fxp\Component\FormExtensions\Form\Extension\BaseChoiceSelect2TypeExtension" public="true">
+        <service id="form.type_extension.fxp.timezone_select2" class="Fxp\Component\FormExtensions\Form\Extension\TimezoneSelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Component\Form\Extension\Core\Type\TimezoneType" />
-            <argument>Symfony\Component\Form\Extension\Core\Type\TimezoneType</argument>
         </service>
 
         <service id="form.type_extension.fxp.collection_select2" class="Fxp\Component\FormExtensions\Form\Extension\CollectionSelect2TypeExtension" public="true">

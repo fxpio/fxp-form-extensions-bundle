@@ -9,9 +9,8 @@
             <tag name="form.type_extension" priority="200" extended-type="Symfony\Bridge\Doctrine\Form\Type\EntityType" />
         </service>
 
-        <service id="form.type_extension.fxp.fxp_entity_select2" class="Fxp\Component\FormExtensions\Doctrine\Form\Extension\EntitySelect2TypeExtension" public="true">
+        <service id="form.type_extension.fxp.fxp_entity_select2" class="Fxp\Component\FormExtensions\Doctrine\Form\Extension\FxpEntitySelect2TypeExtension" public="true">
             <tag name="form.type_extension" priority="200" extended-type="Fxp\Component\FormExtensions\Doctrine\Form\Type\EntityType" />
-            <argument>Fxp\Component\FormExtensions\Doctrine\Form\Type\EntityType</argument>
         </service>
 
         <service id="form.type.fxp.entity" class="Fxp\Component\FormExtensions\Doctrine\Form\Type\EntityType" public="true">
